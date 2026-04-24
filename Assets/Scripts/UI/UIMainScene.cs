@@ -30,14 +30,19 @@ public class UIMainScene : MonoBehaviour
         InfoPopup.gameObject.SetActive(false);
         ResourceDB.Init();
 
-        exitButton.onClick.AddListener(BackToMenu);
+       //exitButton.onClick.AddListener(BackToMenu);
+
+        exitButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("Menu");
+        });
     }
 
-    private void BackToMenu()
-    {
-        SceneManager.LoadScene("Menu");
-    }
-
+   // private void BackToMenu()
+//{
+//SceneManager.LoadScene("Menu");
+    //}
+//
     private void OnDestroy()
     {
         Instance = null;
